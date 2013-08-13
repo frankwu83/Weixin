@@ -137,6 +137,7 @@
     <Compile Include="Context\MessageContext.cs" />
     <Compile Include="Context\WeixinContext.cs" />
     <Compile Include="WeixinClient.cs" />
+    <Compile Include="WeixinMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonAPIs\CommonApi.Menu.cs" />

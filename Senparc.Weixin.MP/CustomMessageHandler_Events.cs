@@ -4,6 +4,7 @@ using System.Web;
 using Senparc.Weixin.MP.Context;
 using Senparc.Weixin.MP.Entities;
 using Senparc.Weixin.MP.MessageHandlers;
+using Senparc.Weixin.MP.Sample.CommonService;
 
 namespace Senparc.Weixin.MP.MessageHandlers
 {
@@ -62,7 +63,52 @@ namespace Senparc.Weixin.MP.MessageHandlers
 
         public override IResponseMessageBase OnEvent_ClickRequest(RequestMessageEvent_Click requestMessage)
         {
-            throw new Exception("Demo中还没有加入CLICK的测试！");
+            var responseMessage = base.CreateResponseMessage<ResponseMessageText>();
+            var responseMessageNews = base.CreateResponseMessage<ResponseMessageNews>();
+            var responseMessageLocation = base.CreateResponseMessage<ResponseMessageNews>();
+            LocationService locationService = new LocationService();
+            
+
+            if (requestMessage.Event == Event.CLICK)
+            {
+                WeixinMenu WM = new WeixinMenu();
+                string RequestState = requestMessage.EventKey;
+                switch (RequestState)
+                {
+                    case "ui":
+                        responseMessageNews.Articles.Add(WM.MenuListening("ui")[0]);
+                        responseMessageNews.Articles.Add(WM.MenuListening("ui")[1]);
+                        return responseMessageNews;
+                    //break;
+                    case "site":
+                        responseMessage.Content = "更多内容敬请期待！";
+                        return responseMessage;
+                    //break;
+                    case "things":
+                        responseMessage.Content = "家事国事天下事，事事关心！";
+                        return responseMessage;
+                    case "week":
+                        responseMessage.Content = "每个月总有那么30几天不想上班！";
+                        return responseMessage;
+                    case "find":
+                        responseMessageLocation.Articles.Add(locationService.GetResponseLocation()[0]);
+                        return responseMessageLocation;
+                    case "about":
+                        responseMessage.Content = "更多内容敬请期待！";
+                        return responseMessage;
+                    default:
+                        responseMessage.Content = "未知指令！";
+                        return responseMessage;
+                    //break;
+                }
+            }
+            else
+            {
+                responseMessage.Content = "未知事件！";
+                return responseMessage;
+            }
+            
+            //throw new Exception("Demo中还没有加入CLICK的测试！");
         }
     }
 }

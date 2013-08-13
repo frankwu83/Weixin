@@ -60,6 +60,7 @@
     <Content Include="d1.aspx" />
     <Content Include="Web.config" />
     <Content Include="weixinAPI.aspx" />
+    <Content Include="weixinURL.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="d1.aspx.cs">
@@ -76,6 +77,13 @@
     </Compile>
     <Compile Include="weixinAPI.aspx.designer.cs">
       <DependentUpon>weixinAPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="weixinURL.aspx.cs">
+      <DependentUpon>weixinURL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="weixinURL.aspx.designer.cs">
+      <DependentUpon>weixinURL.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
