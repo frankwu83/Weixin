@@ -24,7 +24,7 @@ namespace Senparc.Weixin.MP
                     ResponseMsgList.Add(DataCenter(1));
                     break;
                 case "site":
-                    ResponseMsgList.Add(DataCenter(2));
+                    ResponseMsgList.Add(DataCenter(3));
                     break;
                 default:
                     ResponseMsgList.Add(DataCenter(2));
@@ -51,10 +51,10 @@ namespace Senparc.Weixin.MP
             ResponseMsg2.Url = "http://weixin.pescis.cn/rsd/imgs/show/show2.jpg";
 
             Article ResponseMsg3 = new Article();
-            ResponseMsg3.Title = "蓝色地平线";
-            ResponseMsg3.Description = "这是一幅美图，请您欣赏！";
+            ResponseMsg3.Title = "MobileSite";
+            ResponseMsg3.Description = "手机站点测试";
             ResponseMsg3.PicUrl = "http://weixin.pescis.cn/seaworld/imgs/3.jpg";
-            ResponseMsg3.Url = "http://www.seaworldparks.cn/orando/biaoyan.html";
+            ResponseMsg3.Url = "http://weixin.pescis.cn/rsd/HTML5/mobileUI.html";
 
             Article ResponseMsg4 = new Article();
             ResponseMsg4.Title = "与夏慕一起进餐";

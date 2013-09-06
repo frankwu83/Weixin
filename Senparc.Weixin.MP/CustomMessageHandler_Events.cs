@@ -81,8 +81,8 @@ namespace Senparc.Weixin.MP.MessageHandlers
                         return responseMessageNews;
                     //break;
                     case "site":
-                        responseMessage.Content = "更多内容敬请期待！";
-                        return responseMessage;
+                        responseMessageNews.Articles.Add(WM.MenuListening("site")[0]);
+                        return responseMessageNews;
                     //break;
                     case "things":
                         responseMessage.Content = "家事国事天下事，事事关心！";
