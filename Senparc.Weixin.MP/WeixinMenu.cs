@@ -26,6 +26,9 @@ namespace Senparc.Weixin.MP
                 case "site":
                     ResponseMsgList.Add(DataCenter(3));
                     break;
+                case "sell":
+                    ResponseMsgList.Add(DataCenter(4));
+                    break;
                 default:
                     ResponseMsgList.Add(DataCenter(2));
                     break;
@@ -57,10 +60,10 @@ namespace Senparc.Weixin.MP
             ResponseMsg3.Url = "http://weixin.pescis.cn/rsd/HTML5/mobileUI.html";
 
             Article ResponseMsg4 = new Article();
-            ResponseMsg4.Title = "与夏慕一起进餐";
-            ResponseMsg4.Description = "这是一幅美图，请您欣赏！";
-            ResponseMsg4.PicUrl = "http://weixin.pescis.cn/seaworld/imgs/18.jpg";
-            ResponseMsg4.Url = "http://www.seaworldparks.cn/orando/meishi.html";
+            ResponseMsg4.Title = "Heat Bear 浪漫薰衣草味";
+            ResponseMsg4.Description = "澳洲正品进口！纯手工制作！内部填充澳洲风干小麦和精选薰衣草干花，香气可以持续2年以上！";
+            ResponseMsg4.PicUrl = "http://weixin.pescis.cn/rsd/imgs/sell/1.jpg";
+            ResponseMsg4.Url = "http://item.taobao.com/item.htm?spm=a1z10.1.w5003-3490726580.1.nrS0Ov&id=20243813453&scene=taobao_shop&qq-pf-to=pcqq.c2c";
 
             Article ResponseMsg5 = new Article();
             ResponseMsg5.Title = "视频中心";

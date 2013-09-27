@@ -96,6 +96,9 @@ namespace Senparc.Weixin.MP.MessageHandlers
                     case "about":
                         responseMessage.Content = "更多内容敬请期待！";
                         return responseMessage;
+                    case "sell":
+                        responseMessageNews.Articles.Add(WM.MenuListening("sell")[0]);
+                        return responseMessageNews;
                     default:
                         responseMessage.Content = "未知指令！";
                         return responseMessage;
